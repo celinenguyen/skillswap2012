@@ -1,0 +1,245 @@
+/* =========================================================================
+    Setup
+   ------------------------------------------------------------------------- */
+
+@import "lib.less";
+
+@black: #222;
+@grey: #333;
+@white: #fff;
+
+@codeBackground: rgba(0, 0, 0, 0.2);
+@codeText: rgba(0, 0, 0, 0.6);
+@codeSnippetBackground: rgba(0, 0, 0, 0.4);
+@codeSnippetText: #fff;
+
+@ampersandStack: Baskerville, 'Hoefler Text', 'Palatino Linotype', 'Times New Roman', serif;
+
+/* =========================================================================
+    Structure 
+   ------------------------------------------------------------------------- */
+
+body {
+	color: @black;
+	font-family: @crimsonStack;
+	line-height: 1.7;
+	margin: 0;
+	padding: 0;
+}
+
+header, footer {
+	background-color: #222;
+	color: #fff;
+	text-align: center;
+}
+
+.subject {
+	header {
+		background-color: @grey;
+		text-align: center;
+	}
+	h2 {
+		border: 10px solid rgba(255, 255, 255, 0.2);
+		color: rgba(255, 255, 255, 0.3);
+		display: inline-block;
+		font-size: 30px;
+		margin: 30px auto;
+		padding: 10px 30px;
+		text-align: center;
+	}
+}
+
+.slide {
+	width: 50%;
+	padding: 5% 25%;
+	h3 {
+		font-family: @montserratStack;
+		padding: 5px 10px;
+		text-transform: uppercase;
+	}
+	h4 {
+		font-family: @montserratStack;
+	}
+	ul span, ol span {
+		border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+		font-weight: 600;
+	}
+}
+
+
+
+/* =========================================================================
+    Typography 
+   ------------------------------------------------------------------------- */
+
+h1 {
+	font-size: 30px;
+	margin: 0 auto;
+	padding: 40px 0;
+	span {
+		display: block;
+		font-family: @pacificoStack;
+		font-size: 35px;
+		letter-spacing: 1px;
+		text-transform: lowercase;
+		margin-bottom: 10px;
+	}
+}
+
+header, footer, h1, h2 {
+	font-family: @montserratStack;
+	text-transform: uppercase;
+}
+
+a, a:link, a:visited {
+	color: #2586B3;
+	text-decoration: none;
+	&:hover, &:active {
+		color: #3EB0E6;
+	}
+}
+
+code {
+	// background-color: @codeBackground;
+	// color: @codeText;
+	display: inline-block;
+	font-size: 0.75em;
+	font-family: @monospaceStack;
+	padding: 2px 4px;
+	&.snippet {
+		background-color: @codeSnippetBackground;
+		color: @codeSnippetText;
+		padding: 0 20px 20px;
+		white-space: pre-line;
+		.box-inner-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.3));
+		.border-radius(3px);
+		.text-shadow(0, 0, 0, rgba(0, 0, 0, 0));
+	}
+}
+
+abbr {
+	border-bottom: none !important;
+	font-size: 1.4em;
+	font-variant: small-caps;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: lowercase;
+}
+
+ins {
+	background: none;
+}
+
+.amp {
+	font-family: @ampersandStack;
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* =========================================================================
+    Categoric slide styling
+   ------------------------------------------------------------------------- */
+
+ #intro .slide h3, #css .slide h3 {
+	background-color: rgba(255, 255, 255, 0.3);
+	display: inline-block;
+}
+
+ #html .slide h3, #wrapup .slide h3 {
+	background-color: rgba(0, 0, 0, 0.1);
+	display: inline-block;
+}
+
+@intro1: #FDB794;
+@intro2: #FBA88E;
+@intro3: #F89988;
+@intro4: #F78A81;
+@intro5: #F47B7B;
+#intro .slide {
+	color: #331C1C;
+	.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.4));
+	&:first-child {
+		background-color: @intro1;
+	}
+	&:nth-child(2) {
+		background-color: @intro2;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.3));
+	}
+	&:nth-child(3) {
+		background-color: @intro3;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.3));
+	}
+	&:nth-child(4) {
+		background-color: @intro4;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.1));
+	}
+	&:nth-child(5) {
+		background-color: @intro5;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.1));
+	}
+
+	a, a:link, a:visited {
+		color: #992F29;
+		text-decoration: none;
+		&:hover, &:active {
+			color: #B83832;
+		}
+	}
+}
+
+@css1: #C1E069;
+@css2: #B2DF66;
+@css3: #B9E995;
+@css4: #B2F1BB;
+@css5: #ADF7D6;
+@css6: #9ADDD0;
+@css7: #76C1C2;
+@css8: #7EBCC7;
+@css9: #59A8B3;
+#css .slide {
+	color: #1E3538;
+	.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.5));
+	&:first-child {
+		background-color: @css1;
+	}
+	&:nth-child(2) {
+		background-color: @css2;
+	}
+	&:nth-child(3) {
+		background-color: @css3;
+	}
+	&:nth-child(4) {
+		background-color: @css4;
+	}
+	&:nth-child(5) {
+		background-color: @css5;
+	}
+	&:nth-child(6) {
+		background-color: @css6;
+	}
+	&:nth-child(7) {
+		background-color: @css7;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.2));
+	}
+	&:nth-child(8) {
+		background-color: @css8;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.2));
+	}
+	&:nth-child(9) {
+		background-color: @css9;
+		.text-shadow(-1px, 1px, 0, rgba(255, 255, 255, 0.2));
+	}
+	a, a:link, a:visited {
+		color: #2586B3;
+		text-decoration: none;
+		&:hover, &:active {
+			color: #3EB0E6;
+		}
+	}
+}
+
+#html .slide, #wrapup .slide {
+	&:nth-child(odd) {
+		background-color: #eee;
+	}
+}
