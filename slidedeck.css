@@ -1,0 +1,614 @@
+@import "http://fonts.googleapis.com/css?family=Pacifico";
+
+@import "http://fonts.googleapis.com/css?family=Montserrat";
+
+@import "http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic";
+/* =========================================================================
+    Setup
+   ------------------------------------------------------------------------- */
+/* =========================================================================
+    Font stacks
+   ------------------------------------------------------------------------- */
+/* By category */
+/* By specific face */
+/* =========================================================================
+    Cross-browser vendor-prefixed mixins
+   ------------------------------------------------------------------------- */
+/* =========================================================================
+    HTML5 display definitions
+   ------------------------------------------------------------------------- */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+/* =========================================================================
+    Base
+   ------------------------------------------------------------------------- */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+::-moz-selection {
+  background: #5fcccb;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #5fcccb;
+  color: #fff;
+  text-shadow: none;
+}
+/* === links =============================================================== */
+a {
+  color: #00e;
+}
+a:visited {
+  color: #551a8b;
+}
+a:hover {
+  color: #06e;
+}
+a:focus {
+  outline: thin dotted;
+}
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover,
+a:active {
+  outline: 0;
+}
+/* === typography ========================================================== */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+ins {
+  text-decoration: none;
+}
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+/* Redeclare monospace font family: h5bp.com/j */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+/* Improve readability of pre-formatted text in all browsers */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+small {
+  font-size: 85%;
+}
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* ==|== lists ============================================================= */
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+/* ==|== embedded content ================================================== */
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+/*
+ * Correct overflow not hidden in IE9
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* ==|== figures =========================================================== */
+figure {
+  margin: 0;
+}
+/* === forms =============================================================== */
+form {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* Indicate that 'label' will shift focus to the associated form element */
+label {
+  cursor: pointer;
+}
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+  white-space: normal;
+}
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+button,
+input {
+  line-height: normal;
+}
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+/*
+ * Re-set default cursor for disabled elements
+ */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+/*
+ * Consistent box sizing and appearance
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *width: 13px;
+  *height: 13px;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+/* Colors for form validity */
+input:invalid,
+textarea:invalid {
+  background-color: #f0dddd;
+}
+/* === tables ============================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td {
+  vertical-align: top;
+}
+/* ==|== media queries ======================================================
+   This example overrides the primary ('mobile first') styles */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+/* ==|== helpers classes =================================================== */
+/* For image replacement */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  *line-height: 0;
+}
+.ir br {
+  display: none;
+}
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+/* Contain floats: h5bp.com/q */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+/* =========================================================================
+    Structure 
+   ------------------------------------------------------------------------- */
+body {
+  color: #222222;
+  font-family: 'Crimson Text', Baskerville, 'Palatino Linotype', Constantia, serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+header,
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+.subject header {
+  background-color: #333333;
+  text-align: center;
+}
+.subject h2 {
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  font-size: 30px;
+  margin: 30px auto;
+  padding: 10px 30px;
+  text-align: center;
+}
+.slide {
+  width: 50%;
+  padding: 5% 25%;
+}
+.slide h3 {
+  font-family: 'Montserrat', Calibri, Helvetica, Arial, Verdana, sans-serif;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+.slide h4 {
+  font-family: 'Montserrat', Calibri, Helvetica, Arial, Verdana, sans-serif;
+}
+.slide ul span,
+.slide ol span {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+/* =========================================================================
+    Typography 
+   ------------------------------------------------------------------------- */
+h1 {
+  font-size: 30px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+h1 span {
+  display: block;
+  font-family: Pacifico, cursive;
+  font-size: 35px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  margin-bottom: 10px;
+}
+header,
+footer,
+h1,
+h2 {
+  font-family: 'Montserrat', Calibri, Helvetica, Arial, Verdana, sans-serif;
+  text-transform: uppercase;
+}
+a,
+a:link,
+a:visited {
+  color: #2586B3;
+  text-decoration: none;
+}
+a:hover,
+a:link:hover,
+a:visited:hover,
+a:active,
+a:link:active,
+a:visited:active {
+  color: #3EB0E6;
+}
+code {
+  display: inline-block;
+  font-size: 0.75em;
+  font-family: Monaco, Consolas, 'Courier New', Courier, monospace;
+  padding: 2px 4px;
+}
+code.snippet {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  padding: 0 20px 20px;
+  white-space: pre-line;
+  -moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  -khtml-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+abbr {
+  border-bottom: none !important;
+  font-size: 1.4em;
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+ins {
+  background: none;
+}
+.amp {
+  font-family: Baskerville, 'Hoefler Text', 'Palatino Linotype', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: normal;
+}
+/* =========================================================================
+    Categoric slide styling
+   ------------------------------------------------------------------------- */
+#intro .slide h3,
+#css .slide h3 {
+  background-color: rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+#html .slide h3,
+#wrapup .slide h3 {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+#intro .slide {
+  color: #331C1C;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.4);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#intro .slide:first-child {
+  background-color: #fdb794;
+}
+#intro .slide:nth-child(2) {
+  background-color: #fba88e;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.3);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#intro .slide:nth-child(3) {
+  background-color: #f89988;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.3);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#intro .slide:nth-child(4) {
+  background-color: #f78a81;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.1);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#intro .slide:nth-child(5) {
+  background-color: #f47b7b;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.1);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#intro .slide a,
+#intro .slide a:link,
+#intro .slide a:visited {
+  color: #992F29;
+  text-decoration: none;
+}
+#intro .slide a:hover,
+#intro .slide a:link:hover,
+#intro .slide a:visited:hover,
+#intro .slide a:active,
+#intro .slide a:link:active,
+#intro .slide a:visited:active {
+  color: #B83832;
+}
+#css .slide {
+  color: #1E3538;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#css .slide:first-child {
+  background-color: #c1e069;
+}
+#css .slide:nth-child(2) {
+  background-color: #b2df66;
+}
+#css .slide:nth-child(3) {
+  background-color: #b9e995;
+}
+#css .slide:nth-child(4) {
+  background-color: #b2f1bb;
+}
+#css .slide:nth-child(5) {
+  background-color: #adf7d6;
+}
+#css .slide:nth-child(6) {
+  background-color: #9addd0;
+}
+#css .slide:nth-child(7) {
+  background-color: #76c1c2;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#css .slide:nth-child(8) {
+  background-color: #7ebcc7;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#css .slide:nth-child(9) {
+  background-color: #59a8b3;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.2);
+  filter: dropshadow(color=rgba(0, 0, 0, 0), offx=0, offy=0);
+}
+#css .slide a,
+#css .slide a:link,
+#css .slide a:visited {
+  color: #2586B3;
+  text-decoration: none;
+}
+#css .slide a:hover,
+#css .slide a:link:hover,
+#css .slide a:visited:hover,
+#css .slide a:active,
+#css .slide a:link:active,
+#css .slide a:visited:active {
+  color: #3EB0E6;
+}
+#html .slide:nth-child(odd),
+#wrapup .slide:nth-child(odd) {
+  background-color: #eee;
+}

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML &amp; CSS &mdash; Skillswap 2012 </title>
+	<link rel="stylesheet" href="slidedeck.css">
+</head>
+
+<body>
+
+	<header>
+		<h1><span>Skillswap presents</span> an introduction to HTML &amp; CSS</h1>
+	</header>
+
+	<section id="intro" class="subject">
+
+		<section class="slide">
+
+			<h3>Welcome to the workshop!</h3>
+
+			<p>First things first: you can fork the Github repo for this page <a href="#">here</a>, and all the code examples we'll play with will be <a href="http://jsfiddle.net/user/celinenguyen/fiddles/">here</a>. Please practice with the code, and feel free to incorporate any of it into your own projects.</p>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Why HTML &amp; CSS?</h3>
+
+			<blockquote>It's like Minecraft for webpages! And it's free!</blockquote>
+
+			<ul>
+				<li>Endless hours of fun!</li>
+				<li>Impress your friends!</li>
+				<li>Impress employers!</li>
+				<li>Make money, which I hear is kind of nice.</li>
+			</ul>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Separation of style &amp; content</h3>
+
+			<p><abbr title="HyperText Markup Language">HTML</abbr> is meant to focus entirely on <em>meaning</em>&mdash;what your content is, what kind of content, how it's structured. <abbr title="Cascading Style Sheets">CSS</abbr> is to make it look beautiful. Separating your <abbr title="Cascading Style Sheets">CSS</abbr> from your content can be <em>very</em> powerful, since it makes changing the appearance of a website quite effortless&mdash;see the <a href="http://www.csszengarden.com/">CSS Zen Garden</a> for an example.</p>
+
+		</section>
+		
+		<section class="slide">
+
+			<h3>Your, uh, IDE</h3>
+
+			<p>A plaintext editor (you could use Notepad or even Microsoft Word if you're a masochist, but I highly recommend the cross-platform <a href="http://www.sublimetext.com/2">Sublime Text</a> for code editing).</p>
+
+			<p>And a browser. Chrome and Firefox are the most developer-friendly <em>(see next section for why)</em>.</p>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Developer tools</h3>
+
+			<p>Firefox has the supremely wonderful <a href="http://getfirebug.com/">Firebug</a> extension. If you're using Chrome, it's baked right into the browser. Right-click on any webpage and choose "Inspect Element".</p>
+
+			<p>These tools let you <strong>view</strong> and <strong>manipulate</strong> the source of a webpage. Super-handy for learning new techniques and <del>stealing</del> <ins>borrowing</ins> code.</p>
+
+		</section>
+		
+	</section>
+
+	<section id="html" class="subject">
+
+		<header>
+			<h2>HTML</h2>
+		</header>
+
+		<section class="slide">
+			<h3>Syntax</h3>
+			
+			<p>Here's a totally barebones <a href="http://jsfiddle.net/celinenguyen/Utyuy/"><abbr title="HyperText Markup Language">HTML</abbr> page</a> that has no content, to give you an idea of what you need to "set up" a webpage. <a href="http://jsfiddle.net/celinenguyen/7egXr/">This setup</a> is a bit more extensive, and probably closer to what you'd use in production.
+			</p>
+
+			<p>The syntax for <abbr title="HyperText Markup Language">HTML</abbr> is pretty straightforward. It's not a very fussy markup language:</p>
+
+			<code class="snippet">
+				&lt;!-- &lt;element attribute="value"&gt; --&gt;
+				&lt;a href="http://www.scottylabs.org/" title="Organizers of SkillSwap weekend"&gt;Scotty Labs&lt;/a&gt;
+			</code>
+
+			<p>Note some syntactical rules:</p>
+			<ul>
+				<li><span>Put quote marks around your attribute values</span>.</li>
+				<li><span>If you open a tag, close it.</span> Most tags contain content (for the link, it's the actual link text). ("Empty" elements (e.g. an <code>&lt;img&gt;</code> tag) are the exceptions; they politely close themselves on the way out.</li>
+				<li><span>Close tags in the right order.</span> They're nested. Close "inside" tags before you close "outside" tas.</li>
+				<li><span>Comments</span> are indicated with <code>&lt;!-- comment text --&gt;</code>.</li>
+			</ul>
+
+			<p>Certain characters (symbols that have a special meaning in <abbr title="HyperText Markup Language">HTML</abbr>, e.g. <code>&lt; &gt; &amp;</code>, or non-standard symbols like <code>&infin; &#8617; &frac34;</code>), need to be represented as an HTML character entity. Here's a <a href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#Character_entity_references_in_HTML">reference list</a>, and here's a website to <a href="http://copypastecharacter.com/">look up characters</a> and copy their <abbr title="HyperText Markup Language">HTML</abbr> character codes.</p>
+
+			<code class="snippet">
+				&amp;lt; &lt;!-- represents the &lt; symbol --&gt;
+			</code>
+
+		</section>
+		
+		<section class="slide">
+			<!-- talk about both the elements and their main attributes -->
+			
+			<h3>Bread-and-butter elements</h3>
+
+			<p>See <a href="http://jsfiddle.net/celinenguyen/2gBHV/">an example of all the tags mentioned below</a>!</p>
+			<ul>
+				<li><span>Document structure</span>: tags like <code>header, section, footer, nav, article, aside</code> are useful in establishing the information structure of your page. They pair quite well with&hellip;</li> 
+				</li>
+				<li><span>Headings!</span> Headings go from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>. Use them to establish a hierarchy (<code>&lt;h1&gt;</code> for the page heading, <code>&lt;h2&gt;</code> for section headings, <code>&lt;h3&gt;</code> for subsections&hellip;</li>
+				<li><span>Paragraphs</span> are your friendly neighborhood <code>&lt;p&gt;</code> tags.</li>
+				<li><span>Blockquotes</span>, using <code>&lt;blockquote&gt;</code> are for multiline quotes.
+				<li><span>Inline text tags</span>: <code>strong, em</code> are the most commonly used, but there are a few more to format quotes, citations, deleted and inserted text&hellip;</li>
+				<li><span>Images</span> with the <code>&lt;img src="http://placehold.it/200x200"&gt;</code> tag. Only put <strong>content</strong> images in your <abbr title="HyperText Markup Language">HTML</abbr>, not ones that are decorative!</li>
+				<li><span>Links</span> to other websites or different sections of your page.</li>
+				<li><span>Lists</span>, either unordered with <code>&lt;ul&gt;</code> or ordered with <code>&lt;ol&gt;</code>.</li>
+				<li><span>Horizontal rules</span> are to separate thematically distinct content within the same section. You can use them to divide sections of content, but that might be a job for <abbr title="Cascading Style Sheets">CSS</abbr> to handle (by specifying a border between the sections).</li>
+			</ul>
+
+			<p>This is not a comprehensive list! But the <abbr title="Mozilla Developer Network">MDN</abbr> maintains a <a href="https://developer.mozilla.org/en-US/docs/HTML/Element">list of <abbr title="HyperText Markup Language">HTML</abbr> elements</a>, as well as a <a href="https://developer.mozilla.org/en-US/docs/HTML/Attributes">list of attributes</a>.
+
+		</section>
+
+		<section class="slide">
+			<h3>Styling hooks</h3>
+
+			<p>There are two kinds of elements &mdash;block-level and inline elements. <strong>Block elements</strong> are things like headings, paragraphs, and images&mdash;they're on their own line, and what it means for us is that we can position them relatively independently. <strong>Inline elements</strong> are things like strong or emphasized text&mdash;these elements are in line with the other stuff in a paragraph, and their position is dictated by how the other inline elements in the container flow. There's also something weird called inline block elements, which we'll talk about when we hit <abbr title="Cascading Style Sheets">CSS</abbr> layouting.</p>
+			
+			<h4>Divs and spans</h4>
+
+			<p>Think of these as transparent containers that you can apply styles to. They don't have any browser formatting; they're blank slates. Well-placed <code>div</code>s and <code>span</code>s open up a lot of possibility in visuals, but try to not clutter your code with too many!</p>
+
+			<p>A div can be used for&hellip;a gigantic <code>wrapper</code> or <code>container</code> that boxes in your content and centers it. To indicate chunks of text that are styled differently (for example, an error message). Before the <code>&lt;section&gt;</code> tag was introduced these were used to denote <strong>div</strong>isions of content.</p>
+
+			<p>Spans are inline elements! You can use them to style a few words out of a heading or paragraph differently. I'm using a <code>&ltspan class="amp"&gt;</code> to style all the ampersands on this page. Check it out: <span class="amp">&amp;</span>
+
+			<h4>Classes and IDs</h4>
+
+			<p>You saw a peek of this above. Classes and IDs are names you can attach to elements if you want to style them!</p>
+
+			<p>Multiple elements (and elements of different types) can have the same <strong>class</strong>. If you're a fine upstanding citizen of the web, only <em>one</em> element on a page can have a particular <strong>ID</strong>.</p>
+
+		</section>
+	
+	</section>
+
+	<section id="css" class="subject">
+
+		<header>
+			<h2>CSS</h2>
+		</header>
+
+		<section class="slide">
+			
+			<h3>Syntax</h3>
+
+			<p><abbr title="Cascading Style Sheets">CSS</abbr> is also quite simple:</p>
+
+			<code class="snippet">
+				/* it goes like this:
+				   selector { property: value; } */
+				body {
+					background-color: green;
+				}
+			</code>
+
+			<h4>Classes and IDs</h4>
+
+			<code class="snippet">
+				.class { 
+					/* stylin' */
+				}
+				#id {
+					/* hipster stylin'  */
+				}
+			</code>
+
+			<h4>Property shorthand</h4>
+
+			<p>For certain related properties you don't have to declare them one-by-one; they're grouped together into one line. These properties are explained later, but have a go at them now! These are the most commonly used, but here's a list of <a href="http://www.456bereastreet.com/archive/200502/efficient_css_with_shorthand_properties/">more <abbr title="Cascading Style Sheets">CSS</abbr> shorthand</a>.</p>
+
+			<code class="snippet">
+				/* border shorthand: width style color */
+				border-width: 1px;
+				border-style: dashed;
+				border-color: green;
+				/* do this instead! */
+				border: 1px dashed green;
+
+				/* hex code shorthand: one digit for R, one for G, one for B*/
+				color: #1188aa;
+				/* do this instead! */
+				color: #18a;
+
+				/* DIMENSION SHORTHAND USED FOR:
+				   MARGIN, PADDING, BORDER-WIDTH */
+				/* dimension shorthand: top right bottom left, or TRouBLe */
+				margin: 30px 50px 20px 50px;
+
+				/* dimension shorthand: top right&left bottom */
+				padding: 30px 50px 20px;
+
+				/* dimension shorthand: top&bottom left&right */
+				border-width: 10px 5px;
+
+				/* dimension shorthand: top&bottom&left*right */
+				margin: 10px;
+			</code>
+
+		</section>
+
+		<section class="slide">
+			
+			<h3>Selectors</h3>
+
+			<ul>
+				<li><span>Element type</span>: <code>p</code>
+				<li><span>IDs</span>: <code>#container { &hellip; }</code></li>
+				<li><span>Classes</span>: <code>.alert</code></li>
+				<li><span>Descendant</span>: <code>#container a</code></li>
+				<li><span>Direct descendant</span>: <code>section > ul</code></li>
+				<li><span>Adjacent</span>: <code>h3 + h4</code></li>
+				<li><span>And some special link selectors</span>: <code>a:hover</code>, <code>a:active</code>, <code>a:visited</code>
+			</ul>
+
+			<p>There are even more fancy selectors (here's a <a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">comprehensive list</a>, and here are some <a href="http://css-tricks.com/search-results/?q=selectors">thorough articles</a> on more complicated selectors).</p>
+
+		</section>
+
+		<section class="slide">
+			
+			<h3>Cascading?</h3>
+		
+			<p><abbr title="Cascading Style Sheets">CSS</abbr>style declarations <em>cascade</em>. Browsers use the order and proximity in which styles are defined to determine which one applies to an element! This is helpful for styling the same elements differently in different contexts, for overriding styles, and screwing around with webpages on the client side.</p>
+
+			<p>For <strong>order</strong>, styles declared later (aka styles closer to the end of a list of <abbr title="Cascading Style Sheets">CSS</abbr> declarations) override styles declared earlier!</p>
+
+			<p>For <strong>proximity</strong>, note that there are a few ways to include <abbr title="Cascading Style Sheets">CSS</abbr>, and this is their descending order of importance <span class="amp">dominance</amp>:</p>
+
+			<ol>
+				<li><span>User-defined styles</span> (there are browser extensions that allow you to restyle pages to your heart's content).</li>
+				<li><span>Inline styles</span> (<code>&lt;element style="color: red;"&gt;</code>)&mdash;note that this breaks the separation of style and content, so this is normally very bad practice.</li>
+				<li><span>Page styles</span>, seen as style declarations that you put in a <code>&lt;style type="text/css"&gt;/* properties here */&lt;/style&gt;</code> element within a page's <code>&lt;head&gt;</code>.</li>
+				<li><span>External styles</span>, such as <abbr title="Cascading Style Sheets">CSS</abbr> stylesheets that you link from the <code>&lt;head&gt;</code> of a page with the line <code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code>.</li>
+				<li><span>Browser styles</span>. This is the Times New Roman, kind of ugly styling that the browser applies by default. Note that different browsers can have different default styles&hellip;we'll touch on this later.</li>
+			</ol>
+
+		</section>
+
+		<section class="slide">
+			<h3>Specificity</h3>
+
+			<p>So. We have classes, and IDs, and element types. What if you write styles using different selectors that all end up targeting the <em>same</em> attribute on the <em>same</em> element? The <em>most specific selector</em> wins.</p>
+
+			<ul>
+				<li><span>IDs are as specific as you can get</span>; there's only one element of a particular ID on the page, so any ID-specific styling takes precedence.</li>
+				<li><span>Classes (and pseudoclasses) take precedence after IDs</span>.</li>
+				<li><span>Element selectors are the least targeted</span> and therefore the least important in specificity calculations.</li>
+				<li><span>More generic styles will be overridden for more targeted styles</span>. A style for a link <em>only inside unordered lists</em> is "stronger" than a style for links in general.</li>
+				<li><span>Don't make selectors too specific</span> (like using <code>ul.recipeingredients</code> to select an unordered list with the class <code>recipeingredients</code> if that class is <em>only</em> used for unordered lists!).</li>
+			</ul>
+
+			<p>You can learn <a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">how specificity is calculated</a>, but common sense is probably enough, and this is only a <em>major</em> issue if you have overly complex and specific selectors, or you're working on a very large stylesheet.</p>
+
+			<h4> Messy hacks (<code>!important</code>)</h4>
+			<p>In quite a few cases you can subvert the usual cascade/specificity by using the keyword <code>!important</code> to force a particular style to be expressed. It's kind of hackish I'd recommend using it only in debugging.</p>
+
+			<code class="snippet">
+				element { color: red !important; }
+			</code>
+
+		</section>
+
+		<section class="slide">
+			<h3>Layout <span class="amp">&amp;</span> the box model</h3>
+
+			<h4>The box model and calculating element size</h4>
+
+			<p>Five properties affect the size of a box: <code>width, padding, border, outline, margin</code>. The computed size of a box (the size it appears at on a screen) is taken by <em>adding</em> the padding and border, so boxes end up being typically <em>larger</em> than the stated width. Here's a <a href="http://jsfiddle.net/celinenguyen/uM7bz/">small example</a>.</p>
+
+			<p>If you add an outline to the box, that doesn't change the calculated <em>width</em>, but does change how much space the box <em>visually</em> takes up.</p>
+			
+			<h4>Blocks, inline-blocks, and inline elements</h4>
+
+			<h4>Positioning elements</h4>
+
+			<ul>
+				<li><span>Normal flow</span> is where block elements will stack vertically on a page (staying within their containing blocks), and inline elements will flow horizontally left to right.</li>
+				<li><span>Absolutely positioned</span> elements are taken out of the normal flow and put at a precise pixel or percentage location relative to some container.</li>
+				<li><span>Floated</span> elements are also outside of the normal flow, but are easier to understand by example. Here's an <a href="http://css.maxdesign.com.au/floatutorial/introduction.htm">excellent demo of float properties</a>.</li>
+			</ul>
+
+			<p>This is better explained with <a href="http://jsfiddle.net/celinenguyen/dbTVt/">a demo</a>.</p>
+
+			<h4>I just want to center a box in the middle of the page!</h4>
+
+			<p>Oh, just do <a href="http://jsfiddle.net/celinenguyen/9Je7h/">this <code>margin: 0 auto;</code> trick</a>.</p>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Color</h3>
+
+			<ul>
+				<li><span>Hex codes</span> like <code>#ff0000</code> (pure red), or <code>#666666</code> (dark grey, which can be shortened to <code>#666</code>). The first pair of digits are the amount of red , the second pair blue, and the third pair the amount of green in the color.</li>
+				<li><span>RGB values</span>, which are specified as <code>rgb(0, 255, 30)</code> (again: red value, green value, blue value, from 0 to 255).</li>
+				<li><span>RGBA values</span>, which also specify an alpha transparency on a scale of 0 (transparent) to 1 (opaque). <code>rgba(0, 255, 30, 0.5)</code> is 50% transparent.</li>
+				<li><span>Named colors</span>, of which there are <a href="http://147colors.com/">147</a>. Standard colors like <code>red</code>, pretentious colors like <code>palegoldenrod</code> and obscure colors like <code>bisque</code> are included.</li>
+			</ul>
+
+			<p>Here's a <a href="http://www.colourlovers.com/copaso/ColorPaletteSoftware">color palette tool</a> that gives you hex and RGB values, and here's a useful <a href="http://meyerweb.com/eric/tools/color-blend/">color blender</a>.</p>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Units</h3>
+
+			<ul>
+				<li><span>Pixels</span>, which are quite straightforward: <code>200px</code>.</li>
+				<li><span>Percentages</span> of an element's container (or <em>parent element</em>), e.g. <code>60%</code>.</li>
+				<li><span>Ems</span>, which are <em>relative</em> units. <code>1em</code> is equal to the <code>font-size</code> of an element's container. Here's a somewhat old-school article on using <a href="http://v1.jontangerine.com/log/2007/09/the-incredible-em-and-elastic-layouts-with-css"><code>em</code>s for elastic layouts</a>.</li>
+				<li><span>Rems</span>, which are ems indexed from the <code>font-size</code> of the <code>&lt;body&gt;</code> element. Here's an article on <a href="http://snook.ca/archives/html_and_css/font-size-with-rem">when <code>rem</code>s are useful</a>.</li>
+			</ul>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Typography</h3>
+
+			<a href="">Let's just see a demo.</a>
+
+			<h4>Font stacks</h4>
+
+			<p>Since different OSes and computers will have a different set of fonts installed, specify a list of fonts (a font stack) for a browser to try to display text with. The list starts off with preferred, possibly-unavailable typefaces and proceeds to more basic and widely available typefaces.</p>
+
+			<p>End your font stack with a <a href="http://en.wikipedia.org/wiki/Core_fonts_for_the_Web#Files">core web font</a> and a generic category name (your options are <code>serif, sans-serif, monospace, cursive, fantasy</code>).
+
+		</section>
+
+	</section>
+
+	<section id="wrapup" class="subject">
+
+		<header>
+			<h2>Wrapup</h2>
+		</header>
+
+		<section class="slide">
+			
+			<h3>A quick note on default styling and designing for different browsers</h3>
+
+			<h4>CSS resets</h4>
+
+			<h4>Different browsers have different ways of interpreting your markup</h4>
+
+			<p>
+			<p>There are essentially four rendering engines: Webkit (Chrome and Safari both use this, so they'll render webpages almost identically), the rendering engine behind Firefox, the rendering engine behind Opera, and the rendering engine behind Internet Explorer. Internet Explorer in particular has some very annoying quirks, especially in the older versions. <a href="http://www.noupe.com/tools/the-importance-of-cross-browser-compatibity-tips-and-resources.html">Read this</a> to get a look into what some rendering differences are and how to deal with them.</p>
+
+			<p>If you want to get really fancy, you'll also have to consider how mobile users view a website compared to desktop users.</p>
+
+		</section>
+
+		<section class="slide">
+
+			<h3>A project to try&hellip;</h3>
+
+			<p><strong>A simple "business card" website for yourself,</strong> listing your name, résumé, and contact information. Here are two that just link to social media profiles, by <a href="http://timvandamme.com/">Tim van Damme</a> and <a href="http://www.chriscarey.info/">Chris Carey</a>. Here's a more minimalist one by <a href="http://florianpichler.de/">Florian Pichler</a>, and one that looks like a shortened résumé by <a href="http://www.eugenbusoiu.com/">Eugen Busoiu</a>.</p>
+
+			<p>When you're done, you can <a href="http://www.cmu.edu/computing/web/webpublishing/personal/index.html">publish it via AFS</a>.
+
+		</section>
+
+		<section class="slide">
+
+			<h3>Learn more!</h3>
+
+			<h4>I want variables in <abbr title="Cascading Style Sheets">CSS</abbr>!</h4>
+
+			<p>If you've ever programmed before, or if you start writing a <em>ton</em> of <abbr title="Cascading Style Sheets">CSS</abbr>, things will start to bug you. Like not being able to give a hex code a name if you're using a specific shade of blue 34 times in your code.</p>
+
+			<p>This and other problems can be solved with <abbr title="Cascading Style Sheets">CSS</abbr> preprocessors, which allows you to write in a more full-featured, modified syntax that eventually compiles back to <abbr title="Cascading Style Sheets">CSS</abbr>. The most-used preprocessors are <a href="http://lesscss.org/">LESS</a> and <a href="http://sass-lang.com/">SCSS</a>.
+
+			<h4>I want cooler fonts for my webpage!</h4>
+
+			<p>You're lucky you're learning web design now, because it's pretty easy to do so (the bleeding-edge method of custom fonts circa 2008 and 2009 were weird Flash and Javascript display methods). Go read up on <code>@font-face</code> in this <a href="http://sixrevisions.com/css/font-face-guide/">comprehensive guide</a>. And here's a list of <a href="http://hellohappy.org/beautiful-web-type/">quality opensource typefaces</a> available from the Google Webfonts project.</p>
+
+			<h4>I want to learn everything there is to know about <abbr title="Cascading Style Sheets">CSS</abbr>!</h4>
+
+			<p>Learn <a href="https://developer.mozilla.org/en-US/docs/CSS/Shorthand_properties"><abbr title="Cascading Style Sheets">CSS</abbr>property declaration shorthand</a> to make your code cleaner. Master your selectors (including highly useful pseudoselectors and <code>:nth-child</code>, which is one of my <a href="http://css-tricks.com/how-nth-child-works/">favorite selectors</a>). And <strong>read articles and code</strong> to reinforce your knowledge and learn about cool new techniques to try! Here are some recommendations for things to look at:</p>
+
+			<ul>
+				<li>The <a href="https://developer.mozilla.org/en-US/docs/">Mozilla Developer Network</a> has excellent tutorials and is a useful reference tool.</li>
+				<li>If you need to look up <abbr title="Cascading Style Sheets">CSS</abbr> properties and values quickly, use <a href="http://dochub.io/#css/">Dochub!</a>
+				<li><a href="http://css-tricks.com/">CSS Tricks</a> is a fantastic blog that probably has an article for 90% of all <abbr title="Cascading Style Sheets">CSS</abbr> questions you have.</li>
+				<li><a href="http://24ways.org/">24 Ways</a> covers a lot of web development ground, so you'll be able to find quite a few articles on cool <abbr title="Cascading Style Sheets">CSS</abbr> techniques.</li>
+				<li><a href="http://www.smashingmagazine.com/">Smashing Magazine</a> has some very well-written content on the web industry, on best practices, and on randomly cool techniques and inspirational sites. This is also pretty much the blog that made me love web design.</li>
+			</ul>
+
+			<h4>What's the "right way" that professionals do their <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr>?</h4>
+
+			<p>Subject to debate, but if you want to get one (very influential perspective), take a look at the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. It's meant to be a starting template for websites and their code and docs provide rationale for pretty much <em>every</em> feature they include. Very educational.</p>
+
+			<h4>I have more questions!</h4>
+
+			<p>Email me. My Andrew ID is <code>cvnguyen</code>.</p>
+		
+		</section>
+
+	</section>
+
+</body>
+</html>
